@@ -67,6 +67,7 @@ public function store(Request $request)
             'role' => 'admin',
             'profile_picture' => $profilePicturePath,
         ]);
+        
 
         // Verify the admin was created with the profile picture
         if (!$admin || !$admin->profile_picture) {

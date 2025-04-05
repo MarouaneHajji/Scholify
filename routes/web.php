@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\ControlController;
 use App\Http\Controllers\Teacher\GradeController;
+use App\Http\Controllers\Student\StudentProfileController;
+use App\Http\Controllers\Student\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 // Welcome page
@@ -47,6 +49,14 @@ Route::middleware('admin')->group(function () {
 Route::middleware('student')->group(function () {
     Route::get('/student/dashboard', [StudentDashboardController::class, 'dashboard'])->name('dashboard.student');
     Route::get('/student/grades', [App\Http\Controllers\Student\GradeController::class, 'index'])->name('student.grades');
+    
+    // Student Profile Routes
+    Route::get('/student/profile', [App\Http\Controllers\Student\StudentProfileController::class, 'show'])->name('student.profile');
+    Route::put('/student/profile', [App\Http\Controllers\Student\StudentProfileController::class, 'update'])->name('student.profile.update');
+
+    // Student Subjects Routes
+    Route::get('/student/subjects', [App\Http\Controllers\Student\SubjectController::class, 'index'])->name('student.subjects.index');
+    Route::get('/student/subjects/{id}', [App\Http\Controllers\Student\SubjectController::class, 'show'])->name('student.subjects.show');
 });
 
 // Teacher Dashboard
@@ -135,3 +145,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/schedules/{schedule}/edit', [ScheduleController::class, 'edit'])->name('schedules.edit');
     Route::put('/schedules/{id}', [ScheduleController::class, 'update'])->name('schedules.update');
 });
+

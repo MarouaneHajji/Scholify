@@ -131,11 +131,11 @@
                             <i class="fas fa-calendar-alt text-gray-400"></i>
                         </div>
                     @endif
-                    <a href="#" class="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition duration-200">
+                    <a href="{{ route('student.subjects.index') }}" class="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition duration-200">
                         <span class="text-sm font-medium text-indigo-700">View Subjects</span>
                         <i class="fas fa-book-open text-indigo-500"></i>
                     </a>
-                    <a href="#" class="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition duration-200">
+                    <a href="{{ route('student.grades') }}" class="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition duration-200">
                         <span class="text-sm font-medium text-indigo-700">View Grades</span>
                         <i class="fas fa-chart-line text-indigo-500"></i>
                     </a>
